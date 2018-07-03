@@ -23,6 +23,8 @@ import org.vaadin.addons.excelexporter.function.DataCellStyleGeneratorFunction;
 import org.vaadin.addons.excelexporter.utils.ExcelStyleUtil;
 
 import com.vaadin.ui.Grid;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
 /**
  * The Class ExportExcelComponentConfiguration is used to configure the
@@ -59,14 +61,14 @@ public class ExportExcelComponentConfiguration<BEANTYPE> {
 	private BiFunction<XSSFWorkbook, String, XSSFCellStyle> headerStyleFunction = (workbook, columnId) -> {
 		XSSFCellStyle headerCellStyle = workbook.createCellStyle();
 		headerCellStyle.setFillForegroundColor(new XSSFColor(new Color(50, 86, 110)));
-		headerCellStyle.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-		headerCellStyle.setAlignment(CellStyle.ALIGN_LEFT);
+		headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		headerCellStyle.setAlignment(HorizontalAlignment.LEFT);
 		headerCellStyle = ExcelStyleUtil.setBorders(headerCellStyle, Boolean.TRUE, Boolean.TRUE, Boolean.TRUE,
 													Boolean.TRUE, Color.WHITE);
 
 		XSSFFont boldFont = workbook.createFont();
 		boldFont.setColor(IndexedColors.WHITE.getIndex());
-		boldFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
+                boldFont.setBold(true);
 
 		headerCellStyle.setFont(boldFont);
 
@@ -77,14 +79,14 @@ public class ExportExcelComponentConfiguration<BEANTYPE> {
 	private BiFunction<XSSFWorkbook, String, XSSFCellStyle> footerStyleFunction = (workbook, columnId) -> {
 		XSSFCellStyle headerCellStyle = workbook.createCellStyle();
 		headerCellStyle.setFillForegroundColor(new XSSFColor(new Color(50, 86, 110)));
-		headerCellStyle.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-		headerCellStyle.setAlignment(CellStyle.ALIGN_LEFT);
+		headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		headerCellStyle.setAlignment(HorizontalAlignment.LEFT);
 		headerCellStyle = ExcelStyleUtil.setBorders(headerCellStyle, Boolean.TRUE, Boolean.TRUE, Boolean.TRUE,
 													Boolean.TRUE, Color.WHITE);
 
 		XSSFFont boldFont = workbook.createFont();
 		boldFont.setColor(IndexedColors.WHITE.getIndex());
-		boldFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
+                boldFont.setBold(true);
 
 		headerCellStyle.setFont(boldFont);
 
@@ -97,7 +99,7 @@ public class ExportExcelComponentConfiguration<BEANTYPE> {
 
 		if (rowNum % 2 == 1) {
 			cellStyle.setFillForegroundColor(new XSSFColor(new Color(228, 234, 238)));
-			cellStyle.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+			cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		}
 
 		return cellStyle;

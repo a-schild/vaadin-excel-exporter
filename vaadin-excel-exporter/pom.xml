@@ -16,7 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<vaadin.version>8.0.6</vaadin.version>
+		<vaadin.version>8.4.3</vaadin.version>
 		<vaadin.plugin.version>8.0.6</vaadin.plugin.version>
 
 		<!-- ZIP Manifest fields -->
@@ -84,14 +84,14 @@
 		<dependency>
     		<groupId>net.karneim</groupId>
     		<artifactId>pojobuilder</artifactId>
-    		<version>2.3.3</version>
+    		<version>4.2.2</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
     		<groupId>org.apache.poi</groupId>
     		<artifactId>poi-ooxml</artifactId>
-   			 <version>3.9</version>
+   			 <version>3.17</version>
 		</dependency>
 		
 		<dependency>
